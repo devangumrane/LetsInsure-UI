@@ -1,76 +1,110 @@
-import React from 'react';
-import MaxWidthWrapper from './MaxWidthWrapper';
-import { Star, Smartphone } from 'lucide-react';
+import React, { useEffect, useState, useRef } from "react";
+import MaxWidthWrapper from "./MaxWidthWrapper";
+import { motion } from "framer-motion";
+
+const slides = [
+  { id: 1, gradient: "from-indigo-200 to-indigo-400" },
+  { id: 2, gradient: "from-purple-200 to-purple-400" },
+  { id: 3, gradient: "from-orange-200 to-orange-400" },
+  { id: 4, gradient: "from-pink-200 to-pink-400" },
+  { id: 5, gradient: "from-sky-200 to-sky-400" },
+];
+
+const AUTO_SLIDE_DELAY = 3500;
 
 export default function AppCTA() {
-    return (
-        <section className="py-20 bg-white border-t border-gray-100">
-            <MaxWidthWrapper>
-                <div className="flex flex-col md:flex-row items-center border border-gray-200 rounded-3xl p-8 md:p-12 shadow-sm bg-gradient-to-r from-white to-gray-50">
-                    {/* Text Content */}
-                    <div className="w-full md:w-1/2 space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Exclusive Features on LetsInsure App</h2>
-                        <div className="space-y-4">
-                            <FeatureItem title="Check Vehicle PUC" desc="Track your Pollution Certificate status easily." />
-                            <FeatureItem title="Claim Filing & Status Tracking" desc="Paperless claims directly from your phone." />
-                            <FeatureItem title="Wellness Benefits" desc="Access exclusive health & wellness perks." />
-                        </div>
+  const [active, setActive] = useState(2);
+  const [paused, setPaused] = useState(false);
+  const intervalRef = useRef(null);
 
-                        <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                            <AppStoreButton type="playstore" />
-                            <AppStoreButton type="appstore" />
-                        </div>
+  /* Auto slide */
+  useEffect(() => {
+    if (paused) return;
+
+    intervalRef.current = setInterval(() => {
+      setActive((prev) => (prev + 1) % slides.length);
+    }, AUTO_SLIDE_DELAY);
+
+    return () => clearInterval(intervalRef.current);
+  }, [paused]);
+
+  return (
+    <section className="bg-[#F2F2F2] py-20">
+      <MaxWidthWrapper>
+        {/* FIXED HEIGHT STAGE */}
+        <div
+          className="relative h-[420px] flex items-center justify-center"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+        >
+          {/* Slides */}
+          <div className="relative flex items-center gap-10">
+            {slides.map((slide, index) => {
+              const isActive = index === active;
+              const isLeft = index === active - 1;
+              const isRight = index === active + 1;
+
+              if (!isActive && !isLeft && !isRight) return null;
+
+              return (
+                <motion.div
+                  key={slide.id}
+                  animate={{
+                    width: isActive ? 700 : 398,
+                    height: isActive ? 336 : 241,
+                    opacity: isActive ? 1 : 0.5,
+                    scale: isActive ? 1 : 0.95,
+                  }}
+                  transition={{ duration: 0.45, ease: "easeOut" }}
+                  className="
+                    rounded-3xl bg-white shadow-xl
+                    flex items-center justify-between
+                    px-10
+                    cursor-pointer
+                  "
+                  onClick={() => setActive(index)}
+                >
+                  {/* Left Content */}
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-bold">
+                      Check Vehicle PUC
+                    </h3>
+                    <p className="text-slate-500">
+                      Only on LetsInsure app
+                    </p>
+
+                    <div className="w-28 h-28 bg-black text-white flex items-center justify-center text-xs rounded-lg">
+                      QR CODE
                     </div>
+                  </div>
 
-                    {/* Phone Mockup Placeholder */}
-                    <div className="w-full md:w-1/2 flex justify-center mt-10 md:mt-0 relative">
-                        <div className="border-4 border-gray-900 rounded-[3rem] overflow-hidden w-64 h-[500px] shadow-2xl relative bg-white">
-                            {/* Simulated App UI */}
-                            <div className="w-full h-full bg-slate-100 flex flex-col">
-                                <div className="h-40 bg-primary/20 p-6 flex items-end">
-                                    <h3 className="font-bold text-2xl text-primary">Hello, User</h3>
-                                </div>
-                                <div className="p-4 space-y-4">
-                                    <div className="h-24 bg-white rounded-xl shadow-sm"></div>
-                                    <div className="h-24 bg-white rounded-xl shadow-sm"></div>
-                                    <div className="h-24 bg-white rounded-xl shadow-sm"></div>
-                                </div>
-                            </div>
-                        </div>
+                  {/* Phone Mock */}
+                  <div
+                    className={`w-40 h-72 rounded-2xl bg-gradient-to-b ${slide.gradient} shadow-lg`}
+                  />
+                </motion.div>
+              );
+            })}
+          </div>
 
-                        {/* QR Code */}
-                        <div className="absolute bottom-4 left-4 md:left-0 bg-white p-4 shadow-lg rounded-xl border border-gray-100 hidden md:block">
-                            <div className="w-24 h-24 bg-black flex items-center justify-center text-white text-[10px]">QR CODE</div>
-                            <p className="text-[10px] text-center mt-2 text-gray-500">Scan to Download</p>
-                        </div>
-                    </div>
-                </div>
-            </MaxWidthWrapper>
-        </section>
-    );
-}
-
-function FeatureItem({ title, desc }) {
-    return (
-        <div className="flex gap-4">
-            <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
-                <Smartphone className="text-primary" size={24} />
-            </div>
-            <div>
-                <h4 className="font-bold text-slate-800 text-lg">{title}</h4>
-                <p className="text-slate-500">{desc}</p>
-            </div>
+          {/* Dots */}
+          <div className="absolute bottom-[-12px] flex gap-2">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setActive(i)}
+                className={`h-2.5 w-2.5 rounded-full transition
+                  ${
+                    i === active
+                      ? "bg-yellow-400"
+                      : "bg-yellow-400/40"
+                  }
+                `}
+              />
+            ))}
+          </div>
         </div>
-    )
-}
-
-function AppStoreButton({ type }) {
-    return (
-        <button className="flex items-center gap-3 bg-black text-white px-6 py-3 rounded-lg hover:opacity-80 transition-opacity">
-            <div className="text-left">
-                <div className="text-[10px] uppercase">{type === 'playstore' ? 'Get it on' : 'Download on the'}</div>
-                <div className="font-bold text-lg leading-none">{type === 'playstore' ? 'Google Play' : 'App Store'}</div>
-            </div>
-        </button>
-    )
+      </MaxWidthWrapper>
+    </section>
+  );
 }
