@@ -10,7 +10,7 @@ const slides = [
   { id: 5, gradient: "from-sky-200 to-sky-400" },
 ];
 
-const AUTO_SLIDE_DELAY = 3500;
+const AUTO_SLIDE_DELAY = 2000;
 
 export default function AppCTA() {
   const [active, setActive] = useState(2);
