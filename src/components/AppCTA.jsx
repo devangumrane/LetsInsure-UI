@@ -73,7 +73,7 @@ export default function AppCTA() {
                       Only on LetsInsure app
                     </p>
 
-                    <div className="w-28 h-28 bg-black text-white flex items-center justify-center text-xs rounded-lg">
+                    <div className="w-28 h-28 bg-gray-600 text-white flex items-center justify-center text-xs rounded-lg">
                       QR CODE
                     </div>
                   </div>

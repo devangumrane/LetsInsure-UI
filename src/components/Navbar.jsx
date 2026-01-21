@@ -54,7 +54,7 @@ export default function Navbar() {
             </MaxWidthWrapper>
 
             {/* Mega Menu */}
-            <NavbarMegaMenu isOpen={activeLink === "General"} />
+            <NavbarMegaMenu activeMenu={activeLink} />
         </nav>
     );
 }
