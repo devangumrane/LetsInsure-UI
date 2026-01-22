@@ -4,9 +4,10 @@ import InsuranceOptions from "./InsuranceOptions";
 import InputForm from "./InputForm";
 import heroImg from "../assets/Hero-img.png";
 
+import HealthFlow from "./HealthFlow";
+
 export default function Hero() {
   // 🔑 Single source of truth
-  // Home must be default (first icon)
   const [insuranceType, setInsuranceType] = useState("home");
 
   return (
@@ -50,7 +51,11 @@ export default function Hero() {
             STATE-DRIVEN FORM
         -------------------- */}
         <div className="mt-8">
-          <InputForm insuranceType={insuranceType} />
+          {insuranceType === "health" ? (
+            <HealthFlow />
+          ) : (
+            <InputForm insuranceType={insuranceType} />
+          )}
         </div>
       </MaxWidthWrapper>
     </section>
