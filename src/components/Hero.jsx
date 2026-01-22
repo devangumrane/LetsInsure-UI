@@ -1,10 +1,13 @@
-import React from 'react';
-import MaxWidthWrapper from './MaxWidthWrapper';
-import InsuranceOptions from './InsuranceOptions';
-import InputForm from './InputForm';
-import heroImg from '../assets/Hero-img.png';
+import React, { useState } from "react";
+import MaxWidthWrapper from "./MaxWidthWrapper";
+import InsuranceOptions from "./InsuranceOptions";
+import InputForm from "./InputForm";
+import heroImg from "../assets/Hero-img.png";
 
 export default function Hero() {
+  // 🔑 single source of truth
+  const [activeType, setActiveType] = useState("home");
+
   return (
     <section className="w-full bg-[#FAFAFA] pt-10 pb-20 overflow-hidden relative min-h-[500px]">
       <MaxWidthWrapper className="relative z-10">
@@ -22,7 +25,11 @@ export default function Hero() {
               Trusted by 7 Crore+ Indians
             </p>
 
-            <InsuranceOptions />
+            {/* CONTROLLER */}
+            <InsuranceOptions
+              active={activeType}
+              onChange={setActiveType}
+            />
           </div>
 
           {/* Right Illustration */}
@@ -37,12 +44,12 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Input Form */}
+        {/* ACTIVE FORM */}
         <div className="mt-8 w-full">
-          <InputForm />
+          <InputForm type={activeType} />
         </div>
 
-        {/* Footer Actions */}
+        {/* Footer */}
         <div className="mt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             <button className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-full shadow-sm text-gray-700 font-medium hover:bg-gray-50">
