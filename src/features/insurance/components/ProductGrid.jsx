@@ -1,6 +1,6 @@
 import React from 'react';
-import MaxWidthWrapper from './MaxWidthWrapper';
-import { Card, CardContent } from './ui/card';
+import MaxWidthWrapper from '../../../components/ui/MaxWidthWrapper';
+import { Card, CardContent } from '../../../components/ui/card';
 import { ArrowRight, Car, Bike, Heart, Building2, Plane, Smartphone, Home, UserPlus } from 'lucide-react';
 import { motion } from 'framer-motion';
 

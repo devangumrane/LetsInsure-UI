@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import MaxWidthWrapper from "../ui/MaxWidthWrapper";
 import InsuranceOptions from "../../features/insurance/components/InsuranceOptions";
-import InputForm from "../ui/InputForm";
+import InputForm from "../../features/insurance/components/InputForm";
 import heroImg from "../../assets/Hero-img.png";
 
 import HealthFlow from "../../features/health-flow/components/HealthFlow";

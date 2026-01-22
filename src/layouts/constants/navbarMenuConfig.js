@@ -1,8 +1,8 @@
-import carIcon from "../assets/car.png";
-import bikeIcon from "../assets/bike.png";
-import healthIcon from "../assets/health.png";
-import homeIcon from "../assets/home.png";
-import businessIcon from "../assets/business.png";
+import carIcon from "../../assets/car.png";
+import bikeIcon from "../../assets/bike.png";
+import healthIcon from "../../assets/health.png";
+import homeIcon from "../../assets/home.png";
+import businessIcon from "../../assets/business.png";
 
 export const navbarMenuConfig = {
   General: {

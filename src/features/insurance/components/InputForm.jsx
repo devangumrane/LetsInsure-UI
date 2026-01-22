@@ -1,5 +1,5 @@
 import React from "react";
-import { insuranceFormConfig } from "./insuranceFormConfig";
+import { insuranceFormConfig } from "../constants/formConfig";
 
 export default function InputForm({ insuranceType }) {
   const config = insuranceFormConfig[insuranceType];

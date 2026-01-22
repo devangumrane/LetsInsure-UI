@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-import btnAll from '../assets/btn-all.png';
-import btnCar from '../assets/btn-car.png';
-import btnBikeCommercial from '../assets/btn-bike&commercial.png';
-import btnTravel from '../assets/btn-travel.png';
-import btnHealth from '../assets/btn-health.png';
+import btnAll from '../../../assets/btn-all.png';
+import btnCar from '../../../assets/btn-car.png';
+import btnBikeCommercial from '../../../assets/btn-bike&commercial.png';
+import btnTravel from '../../../assets/btn-travel.png';
+import btnHealth from '../../../assets/btn-health.png';
 
 const insuranceTypes = [
     { label: 'All', icon: btnAll },
