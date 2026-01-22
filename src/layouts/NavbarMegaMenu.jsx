@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import MaxWidthWrapper from "./MaxWidthWrapper";
+import MaxWidthWrapper from "../components/ui/MaxWidthWrapper";
 import { ChevronRight, ShieldCheck, Star } from "lucide-react";
-import { navbarMenuConfig } from "./navbarMenuConfig";
+import { navbarMenuConfig } from "./constants/navbarMenuConfig";
 
 export default function NavbarMegaMenu({ activeMenu }) {
   if (!activeMenu) return null;
@@ -44,10 +44,9 @@ export default function NavbarMegaMenu({ activeMenu }) {
                   key={idx}
                   onMouseEnter={() => setActiveCategory(item)}
                   className={`flex items-center justify-between cursor-pointer group
-                    ${
-                      activeCategory.label === item.label
-                        ? "text-[#F9BD3C] font-medium"
-                        : "text-gray-700 hover:text-[#F9BD3C]"
+                    ${activeCategory.label === item.label
+                      ? "text-[#F9BD3C] font-medium"
+                      : "text-gray-700 hover:text-[#F9BD3C]"
                     }
                   `}
                 >

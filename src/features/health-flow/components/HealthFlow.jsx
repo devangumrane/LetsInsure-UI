@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { healthFlowSteps } from "./healthFlowConfig";
+import { healthFlowSteps } from "../constants/healthFlowConfig";
 
 // STEP COMPONENTS (only the ones that exist)
 import MobileStep from "./steps/MobileStep";

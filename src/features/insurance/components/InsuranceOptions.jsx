@@ -1,11 +1,11 @@
 import React from "react";
-import carIcon from "../assets/car.png";
-import bikeIcon from "../assets/bike.png";
-import healthIcon from "../assets/health.png";
-import termIcon from "../assets/term.png";
-import businessIcon from "../assets/business.png";
-import homeIcon from "../assets/home.png";
-import investmentIcon from "../assets/investment.png";
+import carIcon from "../../../assets/car.png";
+import bikeIcon from "../../../assets/bike.png";
+import healthIcon from "../../../assets/health.png";
+import termIcon from "../../../assets/term.png";
+import businessIcon from "../../../assets/business.png";
+import homeIcon from "../../../assets/home.png";
+import investmentIcon from "../../../assets/investment.png";
 
 const options = [
   { key: "home", label: "Home", icon: homeIcon },
@@ -35,10 +35,9 @@ export default function InsuranceOptions({ active, onChange }) {
                 w-16 h-16 rounded-full flex items-center justify-center
                 transition-all duration-300
                 bg-white border
-                ${
-                  isActive
-                    ? "border-[#F9BD3C] shadow-[0_2px_10px_rgba(249,189,60,0.45)] scale-110"
-                    : "border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.08)]"
+                ${isActive
+                  ? "border-[#F9BD3C] shadow-[0_2px_10px_rgba(249,189,60,0.45)] scale-110"
+                  : "border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.08)]"
                 }
                 group-hover:border-[#F9BD3C]
                 group-hover:shadow-[0_2px_10px_rgba(249,189,60,0.45)]

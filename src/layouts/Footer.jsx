@@ -1,6 +1,6 @@
 import React from 'react';
 import { Facebook, Twitter, Instagram, Linkedin, Send } from 'lucide-react';
-import MaxWidthWrapper from './MaxWidthWrapper';
+import MaxWidthWrapper from '../components/ui/MaxWidthWrapper';
 
 export default function Footer() {
     return (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import MaxWidthWrapper from './MaxWidthWrapper';
+import MaxWidthWrapper from '../ui/MaxWidthWrapper';
 import { PlayCircle, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';

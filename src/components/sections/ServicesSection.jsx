@@ -1,12 +1,12 @@
 import React from 'react';
-import MaxWidthWrapper from './MaxWidthWrapper';
-import { Card } from './ui/card';
+import MaxWidthWrapper from '../ui/MaxWidthWrapper';
+import { Card } from '../ui/card';
 import { ArrowRight } from 'lucide-react';
 
-import challansImg from '../assets/challans.png';
-import creditScoreImg from '../assets/credit-score.png';
-import abhaImg from '../assets/generate-abha-id.png';
-import vaahanImg from '../assets/vaahan-owner-details.png';
+import challansImg from '../../assets/challans.png';
+import creditScoreImg from '../../assets/credit-score.png';
+import abhaImg from '../../assets/generate-abha-id.png';
+import vaahanImg from '../../assets/vaahan-owner-details.png';
 
 const services = [
     {

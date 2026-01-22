@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import MaxWidthWrapper from './MaxWidthWrapper';
+import MaxWidthWrapper from '../components/ui/MaxWidthWrapper';
 import { ChevronDown, Moon, User } from 'lucide-react';
 import NavbarMegaMenu from './NavbarMegaMenu';
 

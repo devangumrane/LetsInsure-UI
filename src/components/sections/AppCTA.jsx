@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import MaxWidthWrapper from "./MaxWidthWrapper";
+import MaxWidthWrapper from "../ui/MaxWidthWrapper";
 import { motion } from "framer-motion";
 
 const slides = [
@@ -94,10 +94,9 @@ export default function AppCTA() {
                 key={i}
                 onClick={() => setActive(i)}
                 className={`h-2.5 w-2.5 rounded-full transition
-                  ${
-                    i === active
-                      ? "bg-yellow-400"
-                      : "bg-yellow-400/40"
+                  ${i === active
+                    ? "bg-yellow-400"
+                    : "bg-yellow-400/40"
                   }
                 `}
               />

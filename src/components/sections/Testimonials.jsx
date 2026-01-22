@@ -1,6 +1,6 @@
 import React from "react";
-import MaxWidthWrapper from "./MaxWidthWrapper";
-import { Card } from "./ui/card";
+import MaxWidthWrapper from "../ui/MaxWidthWrapper";
+import { Card } from "../ui/card";
 import { Star } from "lucide-react";
 
 const reviews = [
@@ -30,7 +30,7 @@ const reviews = [
   },
   {
     name: "Vikram Singh",
-    rating: 4,    
+    rating: 4,
     text: "Good prices compared to others. Support team is very helpful.",
     platform: "Google",
   },

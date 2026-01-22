@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import MaxWidthWrapper from "./MaxWidthWrapper";
+import MaxWidthWrapper from '../ui/MaxWidthWrapper';
 import { ShieldCheck, CheckCircle } from "lucide-react";
 import {
   motion,

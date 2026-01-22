@@ -1,7 +1,7 @@
 import React from 'react';
-import MaxWidthWrapper from './MaxWidthWrapper';
+import MaxWidthWrapper from '../ui/MaxWidthWrapper';
 import { Calculator, PieChart, Landmark } from 'lucide-react';
-import { Card } from './ui/card';
+import { Card } from '../ui/card';
 
 const calculatorCategories = [
     {

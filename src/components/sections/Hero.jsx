@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import MaxWidthWrapper from "./MaxWidthWrapper";
-import InsuranceOptions from "./InsuranceOptions";
-import InputForm from "./InputForm";
-import heroImg from "../assets/Hero-img.png";
+import MaxWidthWrapper from "../ui/MaxWidthWrapper";
+import InsuranceOptions from "../../features/insurance/components/InsuranceOptions";
+import InputForm from "../ui/InputForm";
+import heroImg from "../../assets/Hero-img.png";
 
-import HealthFlow from "./HealthFlow";
+import HealthFlow from "../../features/health-flow/components/HealthFlow";
 
 export default function Hero() {
   // 🔑 Single source of truth

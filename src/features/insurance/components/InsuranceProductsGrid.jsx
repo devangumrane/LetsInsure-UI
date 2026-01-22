@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import MaxWidthWrapper from './MaxWidthWrapper';
-import { Card } from './ui/card';
+import MaxWidthWrapper from '../../../components/ui/MaxWidthWrapper';
+import { Card } from '../../../components/ui/card';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 // Import vehicle images
-import carIcon from '../assets/car.png';
-import bikeIcon from '../assets/bike.png';
+import carIcon from '../../../assets/car.png';
+import bikeIcon from '../../../assets/bike.png';
 
 const productCategories = {
     'General Insurance': [
